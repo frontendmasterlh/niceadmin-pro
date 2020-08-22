@@ -1,5 +1,5 @@
 <template>
-  <div class="nice-menu transition" :class="isCollapse ? 'shrink': ''">
+  <div class="nice-menu transition" :class="collapse ? 'nice-shrink': ''">
     <div class="nice-menu-scroll">
       <div class="nice-logo flex-center">
         <router-link to="/" tag="span" class="flex-center"></router-link>
@@ -8,8 +8,9 @@
         class="el-menu-wrapper"
         background-color="#30333c"
         text-color="#ffffff"
-        :collapse="isCollapse"
+        :collapse="collapse"
         active-text-color="#3beee0"
+        :collapse-transition="collapseTransition"
       >
         <el-submenu index="1">
           <template slot="title">
@@ -50,17 +51,24 @@
   export default {
     data() {
       return {
-        isCollapse: false,
+        collapse: false,
+        collapseTransition: false
       };
     },
     components: {},
     computed: {},
     watch: {},
     methods: {
-
+      // 接收bus传递控制菜单折叠
+      changeCollapse() {
+        this.$bus.on('collapse', msg => {
+          this.collapse = msg
+          this.$bus.emit('collapse-content', msg)
+        })
+      }
     },
     created() {
-
+      this.changeCollapse()
     },
     mounted() {
 
@@ -98,7 +106,7 @@
       background-repeat: no-repeat;
       background-position: center center;
       line-height: 50px;
-      transition: all .3s;
+      transition: all .15s;
       box-shadow: 0 1px 2px 0 rgba(0,0,0,.15);
       color: rgba(255,255,255,.8);
       background-color: #30333C;
@@ -112,6 +120,7 @@
     }
     .el-menu-wrapper {
       margin-top: 55px;
+      border-right: 0;
       &:not(.el-menu--collapse) {
         width: 221px;
       }
@@ -120,7 +129,7 @@
       }
     }
   }
-  &.shrink {
+  &.nice-shrink {
     width: 60px;
     .nice-menu-scroll {
       width: 60px;

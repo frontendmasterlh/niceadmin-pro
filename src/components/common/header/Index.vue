@@ -1,9 +1,9 @@
 <template>
-  <div class="nice-header shadow">
+  <div class="nice-header shadow" :class="menuStatu">
     <ul class="nice-nav nice-nav-tool flex-row">
       <li class="nice-nav-item">
-        <a href="javascript:;" title="侧边伸缩">
-          <i class="iconfont nice-icon-pic-left"></i>
+        <a href="javascript:;" title="侧边伸缩" @click="changeCollapse">
+          <i class="iconfont" :class="iconStatu"></i>
         </a>
       </li>
       <li class="nice-nav-item">
@@ -25,14 +25,25 @@
   export default {
     data() {
       return {
-
+        collapse: false
       };
     },
     components: {},
-    computed: {},
+    computed: {
+      menuStatu () {
+        return this.collapse ? "nice-shrink" : "";
+      },
+      iconStatu () {
+        return this.collapse ? "nice-icon-pic-right" : "nice-icon-pic-left";
+      },
+    },
     watch: {},
     methods: {
-
+      // 侧边栏菜单折叠
+      changeCollapse() {
+        this.collapse = !this.collapse
+        this.$bus.emit('collapse', this.collapse)
+      }
     },
     created() {
 
@@ -61,6 +72,13 @@
       line-height: 55px;
       margin: 0 20px;
       position: relative;
+    }
+  }
+  &.nice-shrink {
+    .nice-nav {
+      &.nice-nav-tool {
+        left: 60px;
+      }
     }
   }
 }
