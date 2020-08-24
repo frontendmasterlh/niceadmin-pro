@@ -14,14 +14,15 @@
     </div>
     <!-- tab -->
     <ul class="list">
-      <li class="flex-center">
-        <i class="iconfont nice-icon-homepage_fill"></i>
+      <li class="flex-center home" :class="{'active': isActive('/dashboard')}">
+        <router-link to="/dashboard" tag="i" class="iconfont nice-icon-homepage_fill">
+        </router-link>
       </li>
       <li class="flex-center" v-for="(item,index) in tagsList" :class="{'active': isActive(item.path)}" :key="index">
         <router-link :to="item.path" class="tags-li-title">
           {{item.title}}
         </router-link>
-        <span class="tags-li-icon" @click="closeTags(index)"><i class="el-icon-close"></i></span>
+        <span class="close-btn flex-center transition" @click="closeTags(index)"><i class="el-icon-close"></i></span>
       </li>
     </ul>
   </div>
@@ -68,9 +69,9 @@
         const isExist = this.tagsList.some(item => {
           return item.path === route.fullPath;
         })
-        console.log(isExist)
+        console.log(route.fullPath)
         if (!isExist) {
-          if(!route.meta.title) {
+          if(!route.meta.title || route.fullPath === '/dashboard') {
             return
           }
           this.tagsList.push({
@@ -176,12 +177,31 @@
         padding: 0 15px;
         overflow: hidden;
         position: relative;
+        padding-right: 40px;
         cursor: pointer;
         border-right: 1px solid #f6f6f6;
-
+        &.home {
+          padding-right: 15px;
+        }
         .nice-icon-homepage_fill {
           font-size: 19px;
           margin-top: 1px;
+        }
+
+        .close-btn {
+          position: absolute;
+          right: 8px;
+          top: 50%;
+          margin: -7px 0 0;
+          width: 16px;
+          height: 16px;
+          line-height: 16px;
+          border-radius: 50%;
+          font-size: 12px;
+          &:hover {
+            background: $color-theme;
+            color: #fff;
+          }
         }
 
         &::after {
