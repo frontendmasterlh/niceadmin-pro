@@ -1,7 +1,7 @@
 <template>
   <div class="nice-layout" :class="menuStatu">    
     <div class="nice-layout-body">
-      <div class="nice-layout-fuild">
+      <div class="nice-layout-fuild nice-anim nice-anim-up">
         <router-view></router-view>
       </div>
     </div>
@@ -40,7 +40,7 @@ export default {
     position: fixed;
     left: 220px;
     right: 0;
-    top: 55px;
+    top: 90px;
     bottom: 0;
     z-index: 998;
     width: auto;
@@ -55,6 +55,7 @@ export default {
       bottom: 0;
       left: 0;
       right: 0;
+      background: #f5f7f9;
       overflow: hidden;
       overflow-y: auto;
       .nice-layout-fuild {

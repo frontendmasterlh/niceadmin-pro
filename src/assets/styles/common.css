@@ -3,14 +3,14 @@
   height: 100%;
 }
 
-.container {
+/* .container {
   max-width: 1380px;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-}
+} */
 
 .iconfont {
   color: #666;
@@ -106,12 +106,149 @@
   content: "";
   width: 100%;
   height: 100%;
-  background: #8A2387;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #8A2387;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #F27121, #E94057, #8A2387);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #F27121, #E94057, #8A2387);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   opacity: 0.3;
   display: block;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+/* element */
+.el-menu-item-group__title {
+  padding: 0;
+}
+
+/*  animate */
+
+.nice-anim {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+}
+
+.nice-anim-up {
+  animation-name: nice-up;
+}
+
+.nice-anim-upbit {
+  animation-name: nice-upbit;
+}
+
+.nice-anim-scale {
+  animation-name: nice-scale;
+}
+
+.nice-anim-scaleSpring {
+  animation-name: nice-scaleSpring;
+}
+
+.nice-anim-fadein {
+  animation-name: nice-fadein;
+}
+
+.nice-anim-fadeout {
+  animation-name: nice-fadeout;
+}
+
+.nice-anim-rotate {
+  animation-name: nice-rotate;
+}
+
+.nice-anim-loop {
+  animation-iteration-count: infinite;
+}
+
+/* 从最底部往上滑入 */
+@keyframes nice-up {
+  0% {
+    transform: translate3d(0, 100%, 0);
+    opacity: .3;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+/* 微微往上滑入 */
+@keyframes nice-upbit {
+  0% {
+    transform: translate3d(0, 30px, 0);
+    opacity: .3;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+/* 平滑放大 */
+@keyframes nice-scale {
+  0% {
+    opacity: .3;
+    transform: scale(.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 弹簧式放大 */
+@keyframes nice-scaleSpring {
+  0% {
+    opacity: .5;
+    transform: scale(.5);
+  }
+
+  80% {
+    opacity: .8;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 渐现 */
+@keyframes nice-fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 渐隐 */
+@keyframes nice-fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 360度旋转 */
+@keyframes nice-rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

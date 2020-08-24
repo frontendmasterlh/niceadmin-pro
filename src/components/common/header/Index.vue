@@ -1,5 +1,5 @@
 <template>
-  <div class="nice-header shadow" :class="menuStatu">
+  <div class="nice-header transition shadow" :class="menuStatu">
     <ul class="nice-nav nice-nav-tool flex-row">
       <li class="nice-nav-item">
         <a href="javascript:;" title="侧边伸缩" @click="changeCollapse">
@@ -34,7 +34,7 @@
         return this.collapse ? "nice-shrink" : "";
       },
       iconStatu () {
-        return this.collapse ? "nice-icon-pic-right" : "nice-icon-pic-left";
+        return this.collapse ? "nice-icon-indent" : "nice-icon-outdent";
       },
     },
     watch: {},
@@ -55,31 +55,26 @@
 </script>
 <style lang='stylus' scoped>
 .nice-header {
-  width: 100%;
-  height: 55px;
+  width: calc(100% - 220px);
+  height: 50px;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 220px;
   background-color: #ffffff;
   z-index: 1000;
+  border-bottom: 1px solid #f6f6f6;
   .nice-nav {
     position: relative;
-    &.nice-nav-tool {
-      left: 220px;
-    }
     .nice-nav-item {
-      height: 55px;
-      line-height: 55px;
+      height: 50px;
+      line-height: 50px;
       margin: 0 20px;
       position: relative;
     }
   }
   &.nice-shrink {
-    .nice-nav {
-      &.nice-nav-tool {
-        left: 60px;
-      }
-    }
+    width: 100%;
+    left: 60px;
   }
 }
 </style>

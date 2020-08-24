@@ -60,7 +60,36 @@ export const appRouter = [
         }
       }
     ]
-  }
+  },
+  {
+    path: '/components',
+    meta: {
+      title: '组件',
+      requiresAuth: true
+    },
+    name: 'components',
+    component: Layout,
+    children: [
+      {
+        path: 'button',
+        meta: {
+          title: '按钮',
+          requiresAuth: true,
+          name: 'components_button'
+        },
+        component: resolve => { require(['../views/components/button/Index'], resolve) }
+      },
+      {
+        path: 'nav',
+        meta: {
+          title: '菜单导航',
+          requiresAuth: true,
+          name: 'components_nav'
+        },
+        component: resolve => { require(['../views/components/nav/Index'], resolve) }
+      }
+    ]
+  },
 ]
 
 export const routes = [pageError, ...loginRouter, ...appRouter]
