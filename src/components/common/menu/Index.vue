@@ -77,7 +77,7 @@
 </script>
 <style lang='stylus' scoped>
   .nice-menu {
-    width: 220px;
+    width: 256px;
     position: fixed;
     left: 0;
     top: 0;
@@ -89,7 +89,7 @@
 
     .nice-menu-scroll {
       position: relative;
-      width: 220px;
+      width: 256px;
       height: 100%;
       overflow-x: hidden;
 
@@ -98,16 +98,16 @@
         left: 0;
         top: 0;
         z-index: 1002;
-        width: 220px;
+        width: 256px;
         text-align: center;
-        height: 49px;
+        height: 59px;
         padding: 0 15px;
         box-sizing: border-box;
         overflow: hidden;
         font-weight: 300;
         background-repeat: no-repeat;
         background-position: center center;
-        line-height: 50px;
+        line-height: 60px;
         transition: all .15s;
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
         color: rgba(255, 255, 255, .8);
@@ -129,12 +129,12 @@
         border-radius: 2px;
         font-size: 0;
         box-sizing: border-box;
-        width: 220px;
-        margin-top: 50px;
+        width: 256px;
+        margin-top: 60px;
         background: 0 0;
 
         .el-menu-wrapper {
-          margin-top: 50px;
+          margin-top: 60px;
           border-right: 0;
 
           .el-submenu__title {
@@ -166,7 +166,7 @@
           }
 
           &:not(.el-menu--collapse) {
-            width: 221px;
+            width: 257px;
           }
 
           &.el-menu--collapse {

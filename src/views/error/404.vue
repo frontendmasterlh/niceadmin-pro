@@ -1,9 +1,9 @@
 <template>
-  <div class="error-wrap container flex-column">
-    <div class="content-error h-v-50">
-      <!-- <img src="../../assets/images/404.png" /> -->
+  <div class="error-wrap flex-column">
+    <div class="content-error transition" :class="menuStatu">
+      <img src="../../assets/images/404.png" />
       <h1>404</h1>
-      <h4>哎呀！ 该页面无法找到。</h4>
+      <h4>抱歉，你访问的页面不存在。</h4>
     </div>
   </div>
 </template>
@@ -11,20 +11,37 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      collapse: false
+    }
   },
   components: {},
-  computed: {},
+  computed: {
+    menuStatu () {
+      return this.collapse ? "nice-shrink" : "";
+    }
+  },
   watch: {},
-  methods: {},
-  created() {},
+  methods: {
+    // 接收bus传递控制菜单折叠
+    changeCollapse() {
+      this.$bus.on('collapse-content', msg => {
+        this.collapse = msg
+      })
+    }
+  },
+  created () {
+    this.changeCollapse()
+  },
   mounted() {}
 }
 </script>
 <style lang="stylus" scoped>
 .error-wrap {
-  height: calc(100vh - 273px);
-  padding-top: 70px;
+  width: 100%;
+  height: 100%;
+  padding-top: 90px;
+  justify-content: center;
   .content-error {
     display: flex;
     -webkit-box-orient: vertical;
@@ -32,6 +49,10 @@ export default {
     flex: 1 1 auto;
     justify-content: center;
     align-items: center;
+    margin-left: 220px;
+    &.nice-shrink {
+      margin-left: 60px;
+    }
     img {
       margin-bottom: 1.5rem;
     }

@@ -25,8 +25,14 @@
   export default {
     data() {
       return {
-        collapse: false
+        // collapse: false
       };
+    },
+    props: {
+      collapse: {
+        type: Boolean,
+        default: false
+      }
     },
     components: {},
     computed: {
@@ -41,8 +47,7 @@
     methods: {
       // 侧边栏菜单折叠
       changeCollapse() {
-        this.collapse = !this.collapse
-        this.$bus.emit('collapse', this.collapse)
+        this.$emit('changeCollapse', this.collapse)
       }
     },
     created() {
@@ -55,19 +60,19 @@
 </script>
 <style lang='stylus' scoped>
 .nice-header {
-  width: calc(100% - 220px);
-  height: 50px;
+  width: calc(100% - 256px);
+  height: 60px;
   position: fixed;
   top: 0;
-  left: 220px;
+  left: 256px;
   background-color: #ffffff;
   z-index: 1000;
   border-bottom: 1px solid #f6f6f6;
   .nice-nav {
     position: relative;
     .nice-nav-item {
-      height: 50px;
-      line-height: 50px;
+      height: 60px;
+      line-height: 60px;
       margin: 0 20px;
       position: relative;
     }

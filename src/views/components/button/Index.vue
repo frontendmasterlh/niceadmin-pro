@@ -1,5 +1,5 @@
 <template>
-  <div class="button-component container">
+  <div class="button-component">
     <el-row :gutter="20">
       <el-col :span="24">
         <div class="grid-content bg-purple">

@@ -8,7 +8,7 @@ export const pageError = {
   path: '*',
   name: '404',
   meta: {
-    title: '404-您访问的页面不存在'
+    title: '404'
   },
   component: resolve => {
     require(['@/views/error/404'], resolve)
@@ -70,6 +70,15 @@ export const appRouter = [
     name: 'components',
     component: Layout,
     children: [
+      {
+        path: 'layout',
+        meta: {
+          title: 'Layout布局',
+          requiresAuth: true,
+          name: 'components_layout'
+        },
+        component: resolve => { require(['../views/components/layout/Index'], resolve) }
+      },
       {
         path: 'button',
         meta: {

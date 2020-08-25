@@ -23,6 +23,11 @@ menu.component = {
 
 let componentChildren = menu.component.children
 
+componentChildren.layout = {
+    name: 'Layout布局',
+    path: '/components/layout'
+}
+
 componentChildren.button = {
     name: '按钮',
     path: '/components/button'

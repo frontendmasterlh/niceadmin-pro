@@ -9,15 +9,42 @@
       <i class="el-icon-d-arrow-right"></i>
     </div>
     <!-- 下拉工具 -->
-    <div class="nice-tabs-control down flex-center">
+    <div class="nice-tabs-control down flex-center" :class="dropStatu" @click="openTool">
       <i class="el-icon-caret-bottom"></i>
+      <div class="nice-dropdown">
+        <ul>
+          <li @click.stop="closeLeft">
+            <span class="flex-row">
+              <i class="el-icon-back"></i>
+              关闭左侧
+            </span>
+          </li>
+          <li @click.stop="closeRight">
+            <span class="flex-row">
+              <i class="el-icon-right"></i>
+              关闭右侧
+            </span>
+          </li>
+          <li @click.stop="closeOther">
+            <span class="flex-row">
+              <i class="el-icon-close"></i>
+              关闭其它
+            </span>
+          </li>
+          <li @click.stop="closeAll">
+            <span class="flex-row">
+              <i class="el-icon-error"></i>
+              关闭所有
+            </span>
+          </li>
+        </ul>
+      </div>
     </div>
     <!-- tab -->
     <ul class="list">
-      <li class="flex-center home" :class="{'active': isActive('/dashboard')}">
-        <router-link to="/dashboard" tag="i" class="iconfont nice-icon-homepage_fill">
-        </router-link>
-      </li>
+      <router-link to="/dashboard" tag="li" class="flex-center home" :class="{'active': isActive('/dashboard')}">
+        <i class="iconfont nice-icon-homepage_fill"></i>
+      </router-link>
       <li class="flex-center" v-for="(item,index) in tagsList" :class="{'active': isActive(item.path)}" :key="index">
         <router-link :to="item.path" class="tags-li-title">
           {{item.title}}
@@ -33,16 +60,20 @@
     data() {
       return {
         collapse: false,
+        isOpen: false,
         tagsList: []
       };
     },
     components: {},
     computed: {
       menuStatu() {
-        return this.collapse ? "nice-shrink" : "";
+        return this.collapse ? 'nice-shrink' : '';
       },
       showTags() {
         return this.tagsList.length > 0;
+      },
+      dropStatu() {
+        return this.isOpen ? 'open' : ''
       }
     },
     watch: {
@@ -51,6 +82,10 @@
       }
     },
     methods: {
+      // 展开标签下拉
+      openTool() {
+        this.isOpen = !this.isOpen
+      },
       isActive(path) {
         return path === this.$route.fullPath;
       },
@@ -64,14 +99,53 @@
           this.$router.push('/');
         }
       },
+      // 关闭左侧
+      closeLeft() {
+        let currentIndex = null;
+        this.tagsList.filter((item, index) => {
+          if(item.path == this.$route.fullPath) {
+            currentIndex = index
+          }
+        })
+        this.tagsList = this.tagsList.filter((item, index) => {
+          return Number(index) >= Number(currentIndex)
+        })
+        this.isOpen = false;
+      },
+      // 关闭右侧
+      closeRight() {
+        let currentIndex = null;
+        this.tagsList.filter((item, index) => {
+          if(item.path == this.$route.fullPath) {
+            currentIndex = index
+          }
+        })
+        this.tagsList = this.tagsList.filter((item, index) => {
+          return Number(index) <= Number(currentIndex)
+        })
+        this.isOpen = false;
+      },
+      // 关闭其它
+      closeOther() {
+        const curItem = this.tagsList.filter(item => {
+          return item.path === this.$route.fullPath;
+        })
+        this.tagsList = curItem;
+        this.isOpen = false;
+      },
+      // 关闭所有
+      closeAll() {
+        this.tagsList = [];
+        this.$router.push('/');
+        this.isOpen = false;
+      },
       // 设置标签
       setTags(route) {
         const isExist = this.tagsList.some(item => {
           return item.path === route.fullPath;
         })
-        console.log(route.fullPath)
         if (!isExist) {
-          if(!route.meta.title || route.fullPath === '/dashboard') {
+          if (!route.meta.title || route.fullPath === '/dashboard') {
             return
           }
           this.tagsList.push({
@@ -120,11 +194,11 @@
 </script>
 <style lang='stylus' scoped>
   .nice-tabs {
-    width: calc(100% - 220px);
+    width: calc(100% - 256px);
     height: 40px;
     position: fixed;
-    top: 50px;
-    left: 220px;
+    top: 60px;
+    left: 256px;
     background: #ffffff;
     z-index: 1000;
     height: 40px;
@@ -156,6 +230,15 @@
         width: 40px;
         right: 0;
         border-left: 1px solid #f6f6f6;
+
+        &.open {
+          .nice-dropdown {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0px);
+            display: initial;
+          }
+        }
       }
 
       i {
@@ -180,9 +263,11 @@
         padding-right: 40px;
         cursor: pointer;
         border-right: 1px solid #f6f6f6;
+
         &.home {
           padding-right: 15px;
         }
+
         .nice-icon-homepage_fill {
           font-size: 19px;
           margin-top: 1px;
@@ -198,6 +283,7 @@
           line-height: 16px;
           border-radius: 50%;
           font-size: 12px;
+
           &:hover {
             background: $color-theme;
             color: #fff;
