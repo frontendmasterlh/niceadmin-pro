@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'iconfont';  /* project id 838020 */
-  src: url('//at.alicdn.com/t/font_838020_jknhg5n341.eot');
-  src: url('//at.alicdn.com/t/font_838020_jknhg5n341.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_838020_jknhg5n341.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_838020_jknhg5n341.woff') format('woff'),
-  url('//at.alicdn.com/t/font_838020_jknhg5n341.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_838020_jknhg5n341.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_838020_3ismvdt3142.eot');
+  src: url('//at.alicdn.com/t/font_838020_3ismvdt3142.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_838020_3ismvdt3142.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_838020_3ismvdt3142.woff') format('woff'),
+  url('//at.alicdn.com/t/font_838020_3ismvdt3142.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_838020_3ismvdt3142.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -14,6 +14,118 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.nice-icon-dashujuhangai-icon256:before {
+  content: "\e601";
+}
+
+.nice-icon-hudongbaiban-icon256:before {
+  content: "\e602";
+}
+
+.nice-icon-kaifangshengtai-icon256:before {
+  content: "\e603";
+}
+
+.nice-icon-kejianzhuanma-icon256:before {
+  content: "\e604";
+}
+
+.nice-icon-duochangjingshijian-icon256:before {
+  content: "\e605";
+}
+
+.nice-icon-zhinengfenxi-icon256:before {
+  content: "\e606";
+}
+
+.nice-icon-yingxiaoliebian-icon256:before {
+  content: "\e607";
+}
+
+.nice-icon-shijianyunhang-icon256:before {
+  content: "\e608";
+}
+
+.nice-icon-jiandanyiyong-icon256:before {
+  content: "\e609";
+}
+
+.nice-icon-kehuzhuanhua-icon256:before {
+  content: "\e60a";
+}
+
+.nice-icon-zhuoyueyinshipin-icon256:before {
+  content: "\e60b";
+}
+
+.nice-icon-yunduanlianjie-icon256:before {
+  content: "\e60c";
+}
+
+.nice-icon-jingzhunchuda-icon256:before {
+  content: "\e60d";
+}
+
+.nice-icon-shengtaikaifang-icon256:before {
+  content: "\e60e";
+}
+
+.nice-icon-zhinengduihuajiqi-icon256:before {
+  content: "\e60f";
+}
+
+.nice-icon-zhinengluzhi-icon256:before {
+  content: "\e610";
+}
+
+.nice-icon-AIshibie-icon256:before {
+  content: "\e611";
+}
+
+.nice-icon-danxingtiaozheng-icon256:before {
+  content: "\e612";
+}
+
+.nice-icon-tupuwenda-icon256:before {
+  content: "\e613";
+}
+
+.nice-icon-lianjiekehu-icon256:before {
+  content: "\e614";
+}
+
+.nice-icon-lock_fill:before {
+  content: "\e709";
+}
+
+.nice-icon-lock1:before {
+  content: "\e70a";
+}
+
+.nice-icon-mail:before {
+  content: "\e70d";
+}
+
+.nice-icon-mail_fill:before {
+  content: "\e713";
+}
+
+.nice-icon-people_fill:before {
+  content: "\e715";
+}
+
+.nice-icon-people:before {
+  content: "\e718";
+}
+
+.nice-icon-shangpin:before {
+  content: "\e74e";
+}
+
+.nice-icon-liuyan1:before {
+  content: "\e61f";
 }
 
 .nice-icon-shouru:before {
@@ -28,8 +140,68 @@
   content: "\e634";
 }
 
-.nice-icon-yonghuming1:before {
-  content: "\e65a";
+.nice-icon-shangping:before {
+  content: "\e627";
+}
+
+.nice-icon-user:before {
+  content: "\e7ae";
+}
+
+.nice-icon-lock:before {
+  content: "\e7c9";
+}
+
+.nice-icon-shezhi:before {
+  content: "\e712";
+}
+
+.nice-icon-dot-circle:before {
+  content: "\efa3";
+}
+
+.nice-icon-read:before {
+  content: "\e7d8";
+}
+
+.nice-icon-deploymentunit:before {
+  content: "\e7d2";
+}
+
+.nice-icon-appstoreadd:before {
+  content: "\e8eb";
+}
+
+.nice-icon-pic-right:before {
+  content: "\e7f6";
+}
+
+.nice-icon-pic-left:before {
+  content: "\e7f7";
+}
+
+.nice-icon-block:before {
+  content: "\e7df";
+}
+
+.nice-icon-earth:before {
+  content: "\e781";
+}
+
+.nice-icon-dashboard:before {
+  content: "\e78b";
+}
+
+.nice-icon-bell:before {
+  content: "\e7c4";
+}
+
+.nice-icon-indent:before {
+  content: "\e7f3";
+}
+
+.nice-icon-outdent:before {
+  content: "\e7f4";
 }
 
 .nice-icon-flag_fill:before {
@@ -132,106 +304,14 @@
   content: "\e721";
 }
 
-.nice-icon-shezhi:before {
-  content: "\e712";
-}
-
-.nice-icon-earth:before {
-  content: "\e781";
-}
-
-.nice-icon-dashboard:before {
-  content: "\e78b";
-}
-
-.nice-icon-user:before {
-  content: "\e7ae";
-}
-
-.nice-icon-bell:before {
-  content: "\e7c4";
-}
-
-.nice-icon-lock:before {
-  content: "\e7c9";
-}
-
-.nice-icon-deploymentunit:before {
-  content: "\e7d2";
-}
-
-.nice-icon-read:before {
-  content: "\e7d8";
-}
-
-.nice-icon-block:before {
-  content: "\e7df";
-}
-
-.nice-icon-indent:before {
-  content: "\e7f3";
-}
-
-.nice-icon-outdent:before {
-  content: "\e7f4";
-}
-
-.nice-icon-pic-right:before {
-  content: "\e7f6";
-}
-
-.nice-icon-pic-left:before {
-  content: "\e7f7";
-}
-
-.nice-icon-lingdang:before {
-  content: "\e6f1";
-}
-
-.nice-icon-shangpin:before {
-  content: "\e74e";
-}
-
-.nice-icon-shangping:before {
-  content: "\e627";
-}
-
-.nice-icon-dot-circle:before {
-  content: "\efa3";
-}
-
-.nice-icon-liuyan1:before {
-  content: "\e61f";
+.nice-icon-yonghuming1:before {
+  content: "\e65a";
 }
 
 .nice-icon-mimacopy:before {
   content: "\e6b1";
 }
 
-.nice-icon-appstoreadd:before {
-  content: "\e8eb";
-}
-
-.nice-icon-lock_fill:before {
-  content: "\e709";
-}
-
-.nice-icon-lock1:before {
-  content: "\e70a";
-}
-
-.nice-icon-mail:before {
-  content: "\e70d";
-}
-
-.nice-icon-mail_fill:before {
-  content: "\e713";
-}
-
-.nice-icon-people_fill:before {
-  content: "\e715";
-}
-
-.nice-icon-people:before {
-  content: "\e718";
+.nice-icon-lingdang:before {
+  content: "\e6f1";
 }

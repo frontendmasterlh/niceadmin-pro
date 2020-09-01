@@ -3,17 +3,39 @@
     <el-row :gutter="20">
       <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
         <el-card class="nice-card">
-          
+          <div class="flex-column-center">
+            <img src="../../assets/images/icon1.png" class="icon" alt="">            
+            <span class="desc">累计听歌数</span>
+            <h2>22164</h2>
+          </div>
         </el-card>
       </el-col>
       <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
-        <el-card></el-card>
+        <el-card class="nice-card">
+          <div class="flex-column-center">
+            <img src="../../assets/images/icon2.png" class="icon" alt="">
+            <span class="desc">创建歌单</span>
+            <h2>70</h2>
+          </div>
+        </el-card>
       </el-col>
       <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
-        <el-card></el-card>
+        <el-card class="nice-card">
+          <div class="flex-column-center">
+            <img src="../../assets/images/icon3.png" class="icon" alt="">
+            <span class="desc">收藏歌单</span>
+            <h2>42</h2>
+          </div>
+        </el-card>
       </el-col>
       <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
-        <el-card></el-card>
+        <el-card class="nice-card">
+          <div class="flex-column-center">
+            <img src="../../assets/images/icon4.png" class="icon" alt="">
+            <span class="desc">粉丝数量</span>
+            <h2>2666</h2>
+          </div>
+        </el-card>
       </el-col>
     </el-row>
     <!-- <el-row :gutter="10">
@@ -109,6 +131,22 @@
 </script>
 <style lang='stylus' scoped>
   .dashboard-wrap {
+    .nice-card {
+      position: relative;
+      .icon {
+        width: 30px;
+        margin-bottom: 10px;
+      }
+      h2 {
+        font-size: 28px;
+        font-weight: 700;
+      }
+      .desc {
+        color: #808695;
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+    }
     .userinfo {
       height: 400px;
       text-align: center;
@@ -158,26 +196,5 @@
         }
       }
     }
-  }
-
-  .el-col {
-    border-radius: 4px;
-  }
-
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-
-  .bg-purple {
-    background: #d3dce6;
-  }
-
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
   }
 </style>
