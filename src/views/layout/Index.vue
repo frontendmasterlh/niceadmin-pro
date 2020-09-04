@@ -69,7 +69,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: #f5f7f9;
+      background: #f7f7f7;
       overflow: hidden;
       overflow-y: auto;
 
