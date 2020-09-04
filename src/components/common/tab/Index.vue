@@ -192,13 +192,13 @@
     },
   }
 </script>
-<style lang='stylus' scoped>
+<style lang='scss' scoped>
   .nice-tabs {
-    width: calc(100% - 256px);
+    width: calc(100% - 260px);
     height: 40px;
     position: fixed;
     top: 60px;
-    left: 256px;
+    left: 260px;
     background: #ffffff;
     z-index: 1000;
     height: 40px;
@@ -285,7 +285,7 @@
           font-size: 12px;
 
           &:hover {
-            background: $color-theme;
+            background: #17B3A3;
             color: #fff;
           }
         }

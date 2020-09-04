@@ -1,6 +1,6 @@
 <template>
   <div class="home-panel">
-    <div id="panel" :style="{width: '100%', height: '400px'}"></div>
+    <div id="panel" :style="{width: '100%', height: '465px'}"></div>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
   export default {
     data() {
       return {
-
+        panel: null
       };
     },
     components: {},
@@ -17,6 +17,7 @@
     methods: {
       getLine() {
         let panel = this.$echarts.init(document.getElementById("panel"));
+        this.panel = panel
         let option = {
           title: {
             text: "今日流量趋势",
@@ -29,41 +30,73 @@
               align: "center"
             }
           },
+          legend: {
+            orient: 'horizontal',
+            x:'center',
+            y:'bottom',
+            padding:[0,0,0,0],
+            data: ['PV', 'UV']
+          },
           tooltip: {
             trigger: "axis"
           },
           grid: {
             left: "0%",
             right: "2%",
-            bottom: "0%",
+            bottom: "7%",
             top: "10%",
+            itemGap: 30,
+            textStyle: {
+              color: '#a3afb7'
+            },
             containLabel: true
           },
           xAxis: {
             type: "category",
+            axisLine: {
+              show: false
+            },
+            axisTick:{
+              show:false
+            },
+            splitLine:{
+              show:false
+            },
+            axisLabel: {
+              textStyle: {
+                color: "#a3afb7"
+              }
+            },
             boundaryGap: false,
             data: [
-              "06:00",
-              "07:00",
-              "08:00",
-              "09:00",
-              "10:00",
-              "12:00",
-              "13:00",
-              "14:00",
-              "15:00",
-              "16:00",
-              "17:00",
-              "18:00",
-              "19:00",
-              "20:00",
-              "21:00",
-              "22:00",
-              "23:00"
+              "SUN",
+              "MON",
+              "TUE",
+              "WED",
+              "THU",
+              "FRI",
+              "SAT"
             ]
           },
           yAxis: {
-            type: "value"
+            type: "value",
+            axisLine: {
+              show: false
+            },
+            axisTick:{
+              show:false
+            },
+            splitLine: {
+              show: true,
+              lineStyle: {
+                type: 'dashed'
+              }
+            },
+            axisLabel: {
+              textStyle: {
+                color: "#a3afb7"
+              }
+            }
           },
           series: [{
               name: "PV",
@@ -78,23 +111,13 @@
                 }
               },
               data: [
-                11,
-                33,
-                55,
-                333,
-                5555,
-                3533,
-                666,
-                2666,
-                5666,
-                3999,
-                1777,
-                966,
-                333,
-                222,
-                588,
-                166,
-                11
+                0,
+                2.3,
+                1.9,
+                2.8,
+                2.5,
+                3.7,
+                0
               ]
             },
             {
@@ -110,23 +133,13 @@
                 }
               },
               data: [
-                111,
-                333,
-                555,
-                3333,
-                35555,
-                35333,
-                6666,
-                16666,
-                46666,
-                29999,
-                17777,
-                9666,
-                3333,
-                2222,
-                5888,
-                1666,
-                111
+                0,
+                1.4,
+                0.5,
+                1.8,
+                1.2,
+                1,
+                0
               ]
             }
           ]
@@ -136,7 +149,7 @@
       // 图标自适应
       chartResize() {
         this.resizefun = () => {
-          this.$echarts.init(document.getElementById('panel')).resize(); //这里的myChart就是要自适应的图表容器Id
+          this.panel.resize(); //这里的myChart就是要自适应的图表容器Id
         }
         window.addEventListener('resize', this.resizefun)
       },
@@ -144,7 +157,7 @@
       changeCollapse() {
         this.$bus.on('collapse-content', msg => {
           setTimeout(() => {
-            this.chartResize();
+            this.panel.resize();
           }, 300)
         })
       }
@@ -162,6 +175,6 @@
     },
   }
 </script>
-<style lang='stylus' scoped>
+<style lang='scss' scoped>
 
 </style>

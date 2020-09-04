@@ -60,4 +60,4 @@ export default {
 }
 </script>
 
-<style lang="stylus"></style>
+<style lang="scss"></style>

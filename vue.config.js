@@ -28,13 +28,13 @@ module.exports = {
     config.resolve.extensions
       .add('.js')
       .add('.vue')
-      .add('.stylus')
+      .add('.scss')
   },
   css: {
     loaderOptions: {
-      stylus: {
-        import: '~@/assets/styles/variable.styl'
-      }
+      // scss: {
+      //   import: '~@/assets/style/variable.scss'
+      // }
     }
   },
   devServer: {

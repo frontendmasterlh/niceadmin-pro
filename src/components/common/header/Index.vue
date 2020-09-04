@@ -58,14 +58,14 @@
     },
   }
 </script>
-<style lang='stylus' scoped>
+<style lang='scss' scoped>
 .nice-header {
-  width: calc(100% - 256px);
+  width: calc(100% - 260px);
   height: 60px;
   position: fixed;
   top: 0;
-  left: 256px;
-  background-color: #ffffff;
+  left: 260px;
+  background-color: #fff;
   z-index: 1000;
   border-bottom: 1px solid #f6f6f6;
   .nice-nav {

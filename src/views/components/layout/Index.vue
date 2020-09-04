@@ -285,7 +285,7 @@
     },
   }
 </script>
-<style lang='stylus' scoped>
+<style lang='scss' scoped>
   .el-row {
     margin-bottom: 20px;
 

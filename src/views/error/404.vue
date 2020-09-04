@@ -36,7 +36,7 @@ export default {
   mounted() {}
 }
 </script>
-<style lang="stylus" scoped>
+<style lang="scss" scoped>
 .error-wrap {
   width: 100%;
   height: 100%;

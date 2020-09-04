@@ -1,55 +1,30 @@
 <template>
   <div class="dashboard-wrap">
-    <el-row :gutter="20">
-      <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
-        <el-card class="nice-card">
-          <div class="flex-column-center">
-            <img src="../../assets/images/icon1.png" class="icon" alt="">            
-            <span class="desc">累计听歌数</span>
-            <h2>22164</h2>
+    <el-row type="flex" :gutter="25">
+      <el-col :span="24">
+        <div class="userinfo">
+          <h2 class="title">工作台</h2>
+          <div class="top flex-row">
+            <div class="avatar flex-center">
+              <img src="http://p1.music.126.net/CPOCNGKwvMJ7Njt17Lu-Tg==/109951164836393307.jpg" alt="">
+            </div>
           </div>
-        </el-card>
-      </el-col>
-      <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
-        <el-card class="nice-card">
-          <div class="flex-column-center">
-            <img src="../../assets/images/icon2.png" class="icon" alt="">
-            <span class="desc">创建歌单</span>
-            <h2>70</h2>
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
-        <el-card class="nice-card">
-          <div class="flex-column-center">
-            <img src="../../assets/images/icon3.png" class="icon" alt="">
-            <span class="desc">收藏歌单</span>
-            <h2>42</h2>
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
-        <el-card class="nice-card">
-          <div class="flex-column-center">
-            <img src="../../assets/images/icon4.png" class="icon" alt="">
-            <span class="desc">粉丝数量</span>
-            <h2>2666</h2>
-          </div>
-        </el-card>
+        </div>
       </el-col>
     </el-row>
+
     <!-- <el-row :gutter="10">
-      <el-col :xs="24" :sm="24" :md="24" :lg="9" :xl="5">
+      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
         <div class="grid-content bg-purple">
           <el-card class="nice-card">
             <el-row>
-              <div class="userinfo con">
-                <div class="avatar">
+              <div class="userinfo flex-row">
+                <div class="avatar flex-center">
                   <img src="../../assets/images/logo-small.png" alt="">
                 </div>
                 <p class="name">niceadmin Pro</p>
                 <p class="nickname">lxhcool丶</p>
-                <p class="description">从前慢，车、马、邮件都慢，一生只够爱一人……”能真正打动人的总是朴实无华，没有张扬，默不作声。 在这个充斥着各种联络通讯方式的年代，有时候刻意去寻找的东西却已找不到了。</p>
+                <p class="description">在这个充斥着各种联络通讯方式的年代，有时候刻意去寻找的东西却已找不到了。</p>
                 <ul class="contact">
                   <li>
                     <el-tooltip class="item" effect="dark" content="1138659665@qq.com" placement="top">
@@ -86,36 +61,24 @@
                     </el-tooltip>
                   </li>
                 </ul>
+                <el-button type="primary" class="px40">follow</el-button>
               </div>
             </el-row>
           </el-card>
         </div>
       </el-col>
-      <el-col :xs="24" :sm="24" :md="24" :lg="15" :xl="14">
-        <div class="grid-content bg-purple">
-          <el-card class="nice-card">
-            <panel />
-          </el-card>
-        </div>
-      </el-col>
-      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="5">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-    </el-row> -->
+    </el-row>
+    <div class="nice-layout-fuild nice-anim nice-anim-up">
+    </div> -->
   </div>
 </template>
 
 <script>
-  // import panel from '@/components/home/chart/Index'
   export default {
     data() {
-      return {
-
-      };
+      return {};
     },
-    components: {
-      // panel
-    },
+    components: {},
     computed: {},
     watch: {},
     methods: {
@@ -129,35 +92,46 @@
     },
   }
 </script>
-<style lang='stylus' scoped>
+<style lang='scss' scoped>
   .dashboard-wrap {
     .nice-card {
       position: relative;
+
       .icon {
         width: 30px;
         margin-bottom: 10px;
       }
+
       h2 {
         font-size: 28px;
         font-weight: 700;
       }
+
       .desc {
         color: #808695;
         font-size: 12px;
         margin-bottom: 10px;
       }
     }
+
     .userinfo {
-      height: 400px;
-      text-align: center;
-      padding: 20px 20px 0;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 20px;
+      margin: -20px;
+      box-sizing: content-box;
+      .title {
+        margin-bottom: 15px;
+      }
 
       .avatar {
-        width: 100px;
-        margin: 0 auto 20px;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
 
         img {
           width: 100%;
+          border-radius: 50%;
         }
       }
 
@@ -173,7 +147,7 @@
       }
 
       .description {
-        margin-bottom: 35px;
+        min-height: 80px;
       }
 
       .contact {
@@ -194,6 +168,15 @@
             }
           }
         }
+      }
+
+      .follow-btn {
+        padding: 0 40px;
+        height: 36px;
+        border-radius: .215rem;
+        color: #ffffff;
+        font-size: 1rem;
+        background: #17B3A3;
       }
     }
   }

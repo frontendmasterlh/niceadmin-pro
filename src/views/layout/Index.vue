@@ -48,10 +48,10 @@
   }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="scss" scoped>
   .nice-layout {
     position: fixed;
-    left: 256px;
+    left: 260px;
     right: 0;
     top: 100px;
     bottom: 0;
@@ -74,7 +74,7 @@
       overflow-y: auto;
 
       .nice-layout-fuild {
-        padding: 15px;
+        padding: 20px;
       }
     }
 

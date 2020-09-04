@@ -4,11 +4,12 @@ import router from '@/router';
 import store from '@/store';
 import VueBus from 'vue-bus';
 import echarts from 'echarts';
+import '../theme/index.css';
+import '@/assets/style/iconfont.css';
+import '@/assets/style/reset.css';
+import '@/assets/style/common.css';
 import '@/common/element';
 
-import '@/assets/styles/reset.styl';
-import '@/assets/styles/iconfont.css';
-import '@/assets/styles/common.css';
 
 Vue.config.productionTip = false;
 Vue.use(VueBus)

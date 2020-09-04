@@ -75,9 +75,9 @@
     },
   }
 </script>
-<style lang='stylus' scoped>
+<style lang='scss' scoped>
   .nice-menu {
-    width: 256px;
+    width: 260px;
     position: fixed;
     left: 0;
     top: 0;
@@ -86,10 +86,11 @@
     overflow-x: hidden;
     color: #ffffff;
     background: #30333C;
+    box-shadow: 2px 0 6px rgba(0,21,41,.35);
 
     .nice-menu-scroll {
       position: relative;
-      width: 256px;
+      width: 260px;
       height: 100%;
       overflow-x: hidden;
 
@@ -98,7 +99,7 @@
         left: 0;
         top: 0;
         z-index: 1002;
-        width: 256px;
+        width: 260px;
         text-align: center;
         height: 59px;
         padding: 0 15px;
@@ -129,7 +130,7 @@
         border-radius: 2px;
         font-size: 0;
         box-sizing: border-box;
-        width: 256px;
+        width: 260px;
         margin-top: 60px;
         background: 0 0;
 
