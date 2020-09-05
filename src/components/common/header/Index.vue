@@ -1,5 +1,5 @@
 <template>
-  <div class="nice-header transition shadow" :class="menuStatu">
+  <div class="nice-header transition" :class="menuStatu">
     <ul class="nice-nav nice-nav-tool flex-row">
       <li class="nice-nav-item">
         <a href="javascript:;" title="侧边伸缩" @click="changeCollapse">
@@ -60,11 +60,11 @@
 </script>
 <style lang='scss' scoped>
 .nice-header {
-  width: calc(100% - 260px);
+  width: calc(100% - 255px);
   height: 60px;
   position: fixed;
   top: 0;
-  left: 260px;
+  left: 255px;
   background-color: #fff;
   z-index: 1000;
   border-bottom: 1px solid #f6f6f6;

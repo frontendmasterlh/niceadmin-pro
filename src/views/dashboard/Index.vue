@@ -117,9 +117,7 @@
     .userinfo {
       width: 100%;
       background-color: #ffffff;
-      padding: 20px;
-      margin: -20px;
-      box-sizing: content-box;
+      padding: 10px;
       .title {
         margin-bottom: 15px;
       }

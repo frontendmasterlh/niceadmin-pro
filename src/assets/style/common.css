@@ -136,7 +136,7 @@
   position: absolute;
   background-color: #ffffff;
   width: 120px;
-  right: 5px;
+  right: 0px;
   top: 45px;
   opacity: 0;
   visibility: hidden;
@@ -175,7 +175,7 @@
 
 /* element */
 .el-menu-item-group__title {
-  padding: 0;
+  padding: 0 !important;
 }
 
 /*  animate */

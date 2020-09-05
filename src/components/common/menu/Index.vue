@@ -5,9 +5,8 @@
         <router-link to="/" tag="span" class="flex-center"></router-link>
       </div>
       <div class="nice-menu-tree">
-        <el-menu class="el-menu-wrapper" router background-color="#30333c" text-color="rgba(255, 255, 255, 0.8)"
-          :collapse="collapse" active-text-color="#3beee0" :collapse-transition="collapseTransition"
-          :default-active="$route.path">
+        <el-menu class="el-menu-wrapper" router background-color="#30333c" text-color="rgba(255, 255, 255)"
+          :collapse="collapse" active-text-color="#3beee0" :collapse-transition="collapseTransition">
           <template v-for="(item, index) of menu">
             <el-submenu :index="index" :key="item.name">
               <template slot="title">
@@ -77,7 +76,7 @@
 </script>
 <style lang='scss' scoped>
   .nice-menu {
-    width: 260px;
+    width: 255px;
     position: fixed;
     left: 0;
     top: 0;
@@ -87,10 +86,9 @@
     color: #ffffff;
     background: #30333C;
     box-shadow: 2px 0 6px rgba(0,21,41,.35);
-
     .nice-menu-scroll {
       position: relative;
-      width: 260px;
+      width: 255px;
       height: 100%;
       overflow-x: hidden;
 
@@ -99,7 +97,7 @@
         left: 0;
         top: 0;
         z-index: 1002;
-        width: 260px;
+        width: 255px;
         text-align: center;
         height: 59px;
         padding: 0 15px;
@@ -111,12 +109,12 @@
         line-height: 60px;
         transition: all .15s;
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
-        color: rgba(255, 255, 255, .8);
+        color: #ffffff;
         background-color: #30333C;
         cursor: pointer;
         background-image: url("../../../assets/images/logo-white.png");
         background-repeat: no-repeat;
-        background-size: 90%;
+        background-size: 85%;
 
         span {
           font-size: 16px;
@@ -130,7 +128,7 @@
         border-radius: 2px;
         font-size: 0;
         box-sizing: border-box;
-        width: 260px;
+        width: 255px;
         margin-top: 60px;
         background: 0 0;
 
@@ -140,7 +138,7 @@
 
           .el-submenu__title {
             span {
-              font-size: 13px;
+              font-size: 12px;
             }
           }
 

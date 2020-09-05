@@ -51,9 +51,9 @@
 <style lang="scss" scoped>
   .nice-layout {
     position: fixed;
-    left: 260px;
+    left: 255px;
     right: 0;
-    top: 100px;
+    top: 105px;
     bottom: 0;
     z-index: 998;
     width: auto;
@@ -68,13 +68,12 @@
       top: 0;
       bottom: 0;
       left: 0;
-      right: 0;
-      background: #f7f7f7;
+      right: 0;      
       overflow: hidden;
       overflow-y: auto;
 
       .nice-layout-fuild {
-        padding: 20px;
+        padding: 10px;
       }
     }
 

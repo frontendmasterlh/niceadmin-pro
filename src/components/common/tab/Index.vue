@@ -1,15 +1,15 @@
 <template>
   <div class="nice-tabs transition" :class="menuStatu">
     <!-- 左侧按钮 -->
-    <div class="nice-tabs-control left flex-center">
+    <div class="nice-tabs-control shadow left flex-center">
       <i class="el-icon-d-arrow-left"></i>
     </div>
     <!-- 左侧按钮 -->
-    <div class="nice-tabs-control right flex-center">
+    <div class="nice-tabs-control shadow right flex-center">
       <i class="el-icon-d-arrow-right"></i>
     </div>
     <!-- 下拉工具 -->
-    <div class="nice-tabs-control down flex-center" :class="dropStatu" @click="openTool">
+    <div class="nice-tabs-control shadow down flex-center" :class="dropStatu" @click="openTool">
       <i class="el-icon-caret-bottom"></i>
       <div class="nice-dropdown">
         <ul>
@@ -194,42 +194,42 @@
 </script>
 <style lang='scss' scoped>
   .nice-tabs {
-    width: calc(100% - 260px);
-    height: 40px;
+    width: calc(100% - 255px);
+    height: 34px;
     position: fixed;
-    top: 60px;
-    left: 260px;
-    background: #ffffff;
+    top: 70px;
+    left: 255px;
     z-index: 1000;
-    height: 40px;
-    line-height: 40px;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+    padding: 10px 0px 2px;
+    box-sizing: content-box;
+    background: #f7f7f7;
+
 
     .nice-tabs-control {
       position: absolute;
       top: 0;
-      width: 55px;
-      height: 100%;
-      text-align: center;
+      width: 36px;
+      height: 34px;
+      line-height: 34px;
+      border-radius: 2px;
       cursor: pointer;
+      text-align: center;
       transition: all .3s;
       -webkit-transition: all .3s;
       box-sizing: border-box;
-      border-right: 1px solid #f6f6f6;
+      background: #ffffff;
 
       &.left {
-        left: 0px;
+        left: 10px;
       }
 
       &.right {
-        right: 40px;
-        border-left: 1px solid #f6f6f6;
+        right: 55px;
       }
 
       &.down {
-        width: 40px;
-        right: 0;
-        border-left: 1px solid #f6f6f6;
+        width: 36px;
+        right: 10px;
 
         &.open {
           .nice-dropdown {
@@ -254,7 +254,7 @@
 
       li {
         min-width: 0;
-        line-height: 39px;
+        line-height: 34px;
         max-width: 160px;
         text-overflow: ellipsis;
         padding: 0 15px;
@@ -262,10 +262,12 @@
         position: relative;
         padding-right: 40px;
         cursor: pointer;
-        border-right: 1px solid #f6f6f6;
+        background: #ffffff;
+        margin-right: 10px;
 
         &.home {
           padding-right: 15px;
+          width: 40px;
         }
 
         .nice-icon-homepage_fill {
@@ -290,28 +292,28 @@
           }
         }
 
-        &::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 0;
-          height: 2px;
-          border-radius: 0;
-          background-color: #30333c;
-          transition: all .3s;
-        }
+        // &::after {
+        //   content: '';
+        //   position: absolute;
+        //   top: 0;
+        //   left: 0;
+        //   width: 0;
+        //   height: 2px;
+        //   border-radius: 0;
+        //   background-color: #30333c;
+        //   transition: all .3s;
+        // }
 
-        &.active {
-          background: #f6f6f6;
+        // &.active {
+        //   background: #f6f6f6;
 
-          &::after {
-            width: 100%;
-            border: none;
-            height: 2px;
-            background-color: #30333c;
-          }
-        }
+        //   &::after {
+        //     width: 100%;
+        //     border: none;
+        //     height: 2px;
+        //     background-color: #30333c;
+        //   }
+        // }
       }
     }
 
