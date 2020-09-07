@@ -1,75 +1,135 @@
 <template>
   <div class="dashboard-wrap">
-    <el-row type="flex" :gutter="25">
-      <el-col :span="24">
-        <div class="userinfo">
-          <h2 class="title">工作台</h2>
-          <div class="top flex-row">
-            <div class="avatar flex-center">
-              <img src="http://p1.music.126.net/CPOCNGKwvMJ7Njt17Lu-Tg==/109951164836393307.jpg" alt="">
-            </div>
+    <el-row :gutter="10">
+      <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="6">
+        <div class="nice-card" style="position: relative;">
+          <div class="nice-card-header">
+            <span class="label">访问量</span>
+            <span class="value">365</span>
+            <i class="nice-bg-primary">年</i>
+          </div>
+          <div class="nice-card-bodyer">
+            <ul class="count-sales">
+              <li>
+                <span>日同比</span>
+                <div class="rise">
+                  <i class="el-icon-top-right"></i>
+                  <span>+7%</span>
+                </div>
+              </li>
+              <li>
+                <span>周同比</span>
+                <div class="fall">
+                  <i class="el-icon-bottom-right"></i>
+                  <span>-4%</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="nice-card-footer flex-row">
+            <i class="iconfont nice-icon-dashujuhangai-icon256"></i>
+            <span class="label">总访问量</span>
+            <span class="value">36万</span>
+          </div>
+        </div>
+      </el-col>
+      <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="6">
+        <div class="nice-card">
+          <div class="nice-card-header">
+            <span class="label">发布动态数</span>
+            <span class="value">25000</span>
+            <i class="nice-bg-black">月</i>
+          </div>
+          <div class="nice-card-bodyer">
+            <ul class="count-sales">
+              <li>
+                <span>日同比</span>
+                <div class="rise">
+                  <i class="el-icon-top-right"></i>
+                  <span>+7%</span>
+                </div>
+              </li>
+              <li>
+                <span>周同比</span>
+                <div class="fall">
+                  <i class="el-icon-bottom-right"></i>
+                  <span>-4%</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="nice-card-footer">
+            <i class="iconfont nice-icon-duochangjingshijian-icon256"></i>
+            <span class="label">总访问量</span>
+            <span class="value">36万</span>
+          </div>
+        </div>
+      </el-col>
+      <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="6">
+        <div class="nice-card">
+          <div class="nice-card-header">
+            <span class="label">创建歌单数</span>
+            <span class="value">22229</span>
+            <i class="nice-bg-success">周</i>
+          </div>
+          <div class="nice-card-bodyer">
+            <ul class="count-sales">
+              <li>
+                <span>日同比</span>
+                <div class="rise">
+                  <i class="el-icon-top-right"></i>
+                  <span>+7%</span>
+                </div>
+              </li>
+              <li>
+                <span>周同比</span>
+                <div class="fall">
+                  <i class="el-icon-bottom-right"></i>
+                  <span>-4%</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="nice-card-footer">
+            <i class="iconfont nice-icon-jiandanyiyong-icon256"></i>
+            <span class="label">总访问量</span>
+            <span class="value">36万</span>
+          </div>
+        </div>
+      </el-col>
+      <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="6">
+        <div class="nice-card">
+          <div class="nice-card-header">
+            <span class="label">累计粉丝量</span>
+            <span class="value">85000</span>
+            <i class="nice-bg-danger">日</i>
+          </div>
+          <div class="nice-card-bodyer">
+            <ul class="count-sales">
+              <li>
+                <span>日同比</span>
+                <div class="rise">
+                  <i class="el-icon-top-right"></i>
+                  <span>+7%</span>
+                </div>
+              </li>
+              <li>
+                <span>周同比</span>
+                <div class="fall">
+                  <i class="el-icon-bottom-right"></i>
+                  <span>-4%</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="nice-card-footer">
+            <i class="iconfont nice-icon-danxingtiaozheng-icon256"></i>
+            <span class="label">总访问量</span>
+            <span class="value">36万</span>
           </div>
         </div>
       </el-col>
     </el-row>
-
-    <!-- <el-row :gutter="10">
-      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-        <div class="grid-content bg-purple">
-          <el-card class="nice-card">
-            <el-row>
-              <div class="userinfo flex-row">
-                <div class="avatar flex-center">
-                  <img src="../../assets/images/logo-small.png" alt="">
-                </div>
-                <p class="name">niceadmin Pro</p>
-                <p class="nickname">lxhcool丶</p>
-                <p class="description">在这个充斥着各种联络通讯方式的年代，有时候刻意去寻找的东西却已找不到了。</p>
-                <ul class="contact">
-                  <li>
-                    <el-tooltip class="item" effect="dark" content="1138659665@qq.com" placement="top">
-                      <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=1138659665@qq.com"
-                        target="_blank">
-                        <img src="../../assets/images/contact/mail.png">
-                      </a>
-                    </el-tooltip>
-                  </li>
-                  <li>
-                    <el-tooltip class="item" effect="dark" content="1138659665" placement="top">
-                      <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1138659665&amp;site=qq&amp;menu=yes" target="_blank">
-                        <img src="../../assets/images/contact/qq.png">
-                      </a>
-                    </el-tooltip>
-                  </li>
-                  <li>
-                    <el-tooltip class="item" effect="dark" content="18668161482" placement="top">
-                      <a href="javascript:;">
-                        <img src="../../assets/images/contact/wexin.png">
-                      </a>
-                    </el-tooltip>
-                  </li>
-                  <li>
-                    <a href="https://gitee.com/lxhcool" target="_blank">
-                      <img src="../../assets/images/contact/github.png">
-                    </a>
-                  </li>
-                  <li>
-                    <el-tooltip class="item" effect="dark" content="lxhcool丶" placement="top">
-                      <a href="https://music.163.com/#/user/home?id=119832090" target="_blank">
-                        <img src="../../assets/images/contact/music.png">
-                      </a>
-                    </el-tooltip>
-                  </li>
-                </ul>
-                <el-button type="primary" class="px40">follow</el-button>
-              </div>
-            </el-row>
-          </el-card>
-        </div>
-      </el-col>
-    </el-row>
-    <div class="nice-layout-fuild nice-anim nice-anim-up">
-    </div> -->
   </div>
 </template>
 
@@ -95,6 +155,95 @@
 <style lang='scss' scoped>
   .dashboard-wrap {
     .nice-card {
+      .nice-card-header {
+        height: 50px;
+
+        .value {
+          display: flex;
+          align-items: center;
+          font-size: 18px;
+          font-weight: 700;
+          margin-left: 10px;
+          flex: 1;
+        }
+
+        i {
+          height: 18px;
+          color: #fff;
+          line-height: 18px;
+          font-style: normal;
+          text-align: center;
+          font-size: 12px;
+          position: relative;
+          display: inline-block;
+          padding: 0 6px;
+          font-size: 12px;
+          text-align: center;
+          color: #fff;
+          border-radius: 2px;
+          margin-left: 10px;
+        }
+      }
+
+      .nice-card-bodyer {
+        padding: 0 20px;
+
+        .count-sales {
+          display: flex;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          align-items: center;
+          height: 50px;
+
+          li {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            color: #d5d5d5;
+
+            .fall,
+            .rise {
+              margin-left: 10px;
+              margin-top: 2px;
+            }
+
+            .fall {
+              color: #17B3A3;
+            }
+
+            .rise {
+              color: #FF4C52;
+            }
+          }
+        }
+      }
+
+      .nice-card-footer {
+        .label {
+          flex: 1;
+        }
+        .value {
+          font-size: 13px;
+          margin-left: 10px;
+        }
+        i {
+          margin-right: 10px;
+          font-size: 18px;
+          margin-top: 2px;
+        }
+      }
+    }
+
+    .calendar {
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      border-radius: 10px;
+      font-size: 30px;
+    }
+
+    .nice-card {
       position: relative;
 
       .icon {
@@ -118,6 +267,7 @@
       width: 100%;
       background-color: #ffffff;
       padding: 10px;
+
       .title {
         margin-bottom: 15px;
       }

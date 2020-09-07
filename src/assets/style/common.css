@@ -87,6 +87,22 @@
   font-size: 18px;
 }
 
+.nice-bg-primary {
+  background: #17B3A3;
+}
+
+.nice-bg-black {
+  background: #000000;
+}
+
+.nice-bg-success {
+  background: #11C26D;
+}
+
+.nice-bg-danger {
+  background: #FF4C52;
+}
+
 /* 文字控制显示 */
 
 .ellipsis {
@@ -171,6 +187,39 @@
 
 .nice-layout-fuild {
   padding: 15px;
+}
+
+.nice-card {
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  letter-spacing: .5px;
+  transition: all 0.4s;
+}
+
+.nice-card:hover {
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.1);
+}
+
+.nice-card-header {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nice-card-bodyer {
+  padding: 20px;
+}
+
+.nice-card-footer {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border-top: 1px solid #f7f7f7;
+  font-size: 12px;
+  margin: 0 5px;
+  padding: 0 15px;
 }
 
 /* element */

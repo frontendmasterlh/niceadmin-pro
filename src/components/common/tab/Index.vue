@@ -264,6 +264,10 @@
         cursor: pointer;
         background: #ffffff;
         margin-right: 10px;
+        box-shadow: 0 1px 5px 0 rgba(0,0,0,.05);
+        a {
+          color: #999999;
+        }
 
         &.home {
           padding-right: 15px;
@@ -291,29 +295,11 @@
             color: #fff;
           }
         }
-
-        // &::after {
-        //   content: '';
-        //   position: absolute;
-        //   top: 0;
-        //   left: 0;
-        //   width: 0;
-        //   height: 2px;
-        //   border-radius: 0;
-        //   background-color: #30333c;
-        //   transition: all .3s;
-        // }
-
-        // &.active {
-        //   background: #f6f6f6;
-
-        //   &::after {
-        //     width: 100%;
-        //     border: none;
-        //     height: 2px;
-        //     background-color: #30333c;
-        //   }
-        // }
+        &.active {
+          a {
+            color: #2f3447;
+          }
+        }
       }
     }
 
