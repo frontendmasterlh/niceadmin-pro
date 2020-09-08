@@ -23,6 +23,7 @@
     "babel-eslint": "^10.1.0",
     "babel-plugin-component": "^1.1.1",
     "echarts": "^4.8.0",
+    "element-resize-detector": "^1.2.1",
     "element-theme-chalk": "^2.13.2",
     "element-ui": "^2.13.2",
     "eslint": "^6.7.2",
