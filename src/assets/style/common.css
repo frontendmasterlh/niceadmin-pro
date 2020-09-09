@@ -67,6 +67,10 @@
   margin-right: 5px;
 }
 
+.ml10 {
+  margin-left: 10px;
+}
+
 /* padding */
 .px40 {
   padding-left: 40px !important;
@@ -135,12 +139,9 @@
   content: "";
   width: 100%;
   height: 100%;
-  background: #8A2387;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #F27121, #E94057, #8A2387);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #F27121, #E94057, #8A2387);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #dd3e54;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6be585, #dd3e54);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6be585, #dd3e54); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   opacity: 0.3;
   display: block;
   position: absolute;
