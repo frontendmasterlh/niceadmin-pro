@@ -29,6 +29,7 @@ export default {
   },
   watch: {
     screenWidth (val) {
+      console.log(val)
       if(val < 768) {
         this.collapse = true
         this.$bus.emit('collapse', this.collapse)

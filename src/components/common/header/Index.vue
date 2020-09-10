@@ -16,12 +16,14 @@
           <i class="iconfont nice-icon-refresh font18"></i>
         </a>
       </li>
+      <breadcrumb />
     </ul>
     <!-- <div class="nice-nav nice-nav-user"></div> -->
   </div>
 </template>
 
 <script>
+  import breadcrumb from '@/components/common/breadcrumb/Index'
   export default {
     data() {
       return {
@@ -34,7 +36,9 @@
         default: false
       }
     },
-    components: {},
+    components: {
+      breadcrumb
+    },
     computed: {
       menuStatu () {
         return this.collapse ? "nice-shrink" : "";

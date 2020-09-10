@@ -43,7 +43,7 @@ export const appRouter = [
       name: 'dashboard'
     },
     meta: {
-      title: '控制台',
+      title: '主页',
       keepAlive: true
     },
     component: Layout,

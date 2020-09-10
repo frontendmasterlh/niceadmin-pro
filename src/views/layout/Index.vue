@@ -6,17 +6,22 @@
           <router-view></router-view>
         </keep-alive>
       </div>
+      <nice-footer></nice-footer>
     </div>
   </div>
 </template>
 
 <script>
+  import niceFooter from '@/components/common/footer/Index'
   export default {
     data() {
       return {
         tagList: [],
         collapse: false
       }
+    },
+    components: {
+      niceFooter
     },
     computed: {
       menuStatu() {

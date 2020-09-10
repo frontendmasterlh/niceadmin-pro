@@ -1,32 +1,30 @@
 <template>
-  <el-col :xs="24" :sm="24" :md="24" :lg="16" :xl="16">
-    <div class="nice-card">
-      <div class="nice-card-header">
-        <span class="label flex-row"> <i class="iconfont nice-icon-manage"></i> 我的项目</span>
-        <el-link type="primary" :underline="false" style="font-size: 13px;"><img
-            src="../../../assets/images/contact/github.png" alt=""></el-link>
-      </div>
-      <div class="nice-card-bodyer">
-        <el-row :gutter="10">
-          <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="8" v-for="item of github" :key="item.id">
-            <div class="project-card">
-              <div class="bg-cover">
-                <div class="bg-effect"
-                  style="background-image: url('https://resources.ninghao.org/images/gravity-falls.png');">
-                  <span class="layer"></span>
-                </div>
-                <div class="info">
-                  <h3 class="flex-between">{{ item.name }} <small class="flex-row"><i
-                        class="el-icon-star-on"></i>{{item.stargazers_count}}</small> </h3>
-                  <p>{{ item.description }}</p>
-                </div>
+  <div class="nice-card">
+    <div class="nice-card-header">
+      <span class="label flex-row"> <i class="iconfont nice-icon-manage"></i> 我的项目</span>
+      <el-link type="primary" :underline="false" style="font-size: 13px;"><img
+          src="../../../assets/images/contact/github.png" alt=""></el-link>
+    </div>
+    <div class="nice-card-bodyer">
+      <el-row :gutter="10">
+        <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="8" v-for="item of github" :key="item.id">
+          <div class="project-card">
+            <div class="bg-cover">
+              <div class="bg-effect"
+                style="background-image: url('https://resources.ninghao.org/images/gravity-falls.png');">
+                <span class="layer"></span>
+              </div>
+              <div class="info">
+                <h3 class="flex-between">{{ item.name }} <small class="flex-row"><i
+                      class="el-icon-star-on"></i>{{item.stargazers_count}}</small> </h3>
+                <p>{{ item.description }}</p>
               </div>
             </div>
-          </el-col>
-        </el-row>
-      </div>
+          </div>
+        </el-col>
+      </el-row>
     </div>
-  </el-col>
+  </div>
 </template>
 
 <script>
