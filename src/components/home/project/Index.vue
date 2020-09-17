@@ -11,7 +11,7 @@
           <div class="project-card">
             <div class="bg-cover">
               <div class="bg-effect"
-                style="background-image: url('https://resources.ninghao.org/images/gravity-falls.png');">
+                :style="`background-image: url(${item.bg});`">
                 <span class="layer"></span>
               </div>
               <div class="info">
@@ -28,11 +28,46 @@
 </template>
 
 <script>
-  import github from '@/utils/api.js'
   export default {
     data() {
       return {
-        github
+        github: [{
+          id: 1,
+          name: 'desktop-nicemusic',
+          stargazers_count: '151',
+          description: 'vue-desktop-nicemusic 仿网易云音乐',
+          bg: 'https://lxhcool.gitee.io/nice_image/images/candy-shop.jpg'
+        },{
+          id: 2,
+          name: 'nice-masterplate',
+          stargazers_count: '0',
+          description: 'nice-masterplate',
+          bg: 'https://lxhcool.gitee.io/nice_image/images/childhood-in-a-picture.jpg'
+        },{
+          id: 3,
+          name: 'NeteaseCloudMusicApi',
+          stargazers_count: '1',
+          description: '网易云音乐 Node.js API service',
+          bg: 'https://lxhcool.gitee.io/nice_image/images/contained.jpg'
+        },{
+          id: 4,
+          name: 'wx-nicemusic',
+          stargazers_count: '0',
+          description: 'wx-nicemusic',
+          bg: 'https://lxhcool.gitee.io/nice_image/images/dragon.jpg'
+        },{
+          id: 5,
+          name: 'workplace',
+          stargazers_count: '0',
+          description: 'workplace',
+          bg: 'https://lxhcool.gitee.io/nice_image/images/keyclack.jpg'
+        },{
+          id: 6,
+          name: 'nicemusic',
+          stargazers_count: '0',
+          description: 'nicemusic',
+          bg: 'https://lxhcool.gitee.io/nice_image/images/undo.jpg'
+        }]
       };
     },
     components: {},

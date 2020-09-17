@@ -63,7 +63,6 @@
         this.$bus.on('collapse', msg => {
           this.collapse = msg
           this.$bus.emit('collapse-content', msg)
-          console.log(msg)
         })
       }
     },

@@ -91,7 +91,7 @@
         padding: 20px 20px 0;
 
         .avatar {
-          width: 65px;
+          width: 75px;
           margin: 0 auto 15px;
 
           img {

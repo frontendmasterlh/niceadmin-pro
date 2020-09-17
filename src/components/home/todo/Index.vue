@@ -41,12 +41,9 @@
 </template>
 
 <script>
-  import github from '@/utils/api.js'
   export default {
     data() {
-      return {
-        github
-      };
+      return {};
     },
     components: {},
     computed: {},
