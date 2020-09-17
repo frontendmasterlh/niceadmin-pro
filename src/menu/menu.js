@@ -1,80 +1,55 @@
-let menu = {}
-
-// 首页
-menu.home = {
-    name: '主页',
-    icon: 'nice-icon-dashboard',
-    children: {}
-}
-
-let homeChildren = menu.home.children
-
-homeChildren.dashboard = {
-    name: '仪表盘',
-    path: '/dashboard'
-}
-
-// 组件
-menu.component = {
-    name: '组件',
-    icon: 'nice-icon-deploymentunit',
-    children: {}
-}
-
-let componentChildren = menu.component.children
-
-componentChildren.layout = {
-    name: 'Layout布局',
-    path: '/components/layout'
-}
-
-componentChildren.button = {
-    name: '按钮',
-    path: '/components/button'
-}
-componentChildren.nav = {
-    name: '菜单导航',
-    path: '/components/nav'
-}
-
-// 设置
-menu.set = {
-    name: '设置',
-    icon: 'nice-icon-shezhi',
-    children: {}
-}
-
-let setChildren = menu.set.children
-
-setChildren.system = {
-    name: '系统设置',
-    icon: 'nice-icon-shezhi',
-    children: {}
-}
-
-let systemChildren = setChildren.system.children
-
-systemChildren.website = {
-    name: '网站设置',
-    path: '/system/website'
-}
-
-setChildren.user = {
-    name: '我的设置',
-    icon: 'nice-icon-shezhi',
-    children: {}
-}
-
-let userChildren = setChildren.user.children
-
-userChildren.info = {
-    name: '基本资料',
-    path: '/mySetting/userInfo'
-}
-
-userChildren.password = {
-    name: '修改密码',
-    path: '/mySetting/password'
-}
+let menu = [
+	{
+		name: "主页",
+		icon: "nice-icon-dashboard",
+		index: "1",
+		children: [
+			{
+				name: '仪表盘',
+				index: "1-1",
+				path: "/dashboard"
+			}
+		]
+	},
+	{
+		name: '组件',
+		icon: 'nice-icon-deploymentunit',
+		index: "2",
+		children: [
+			{
+				name: '栅格布局',
+				index: "2-1",
+				path: '/components/grid'
+			},
+			{
+				name: '按钮集合',
+				index: "2-2",
+				path: '/components/button'
+			},
+			{
+				name: '菜单导航',
+				index: "2-3",
+				path: '/components/nav'
+			},
+			{
+				name: "表单",
+				index: "2-4",
+				icon: "nice-icon-read",
+				children: [
+					{
+						name: "基础表单",
+						index: "2-4-1",
+						path: '/components/form/element'
+					},
+					{
+						name: "组合表单",
+						index: "2-4-2",
+						path: '/components/form/group'
+					}
+				]
+			}
+		]
+	}
+]
 
 export default menu

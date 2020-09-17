@@ -131,11 +131,10 @@
     },
     mounted() {
       this.$chart.line('listening')
-      window.onresize = () => {
-        return (() => {
-          this.$chart.line('listening')
-        })()
-      }
+      const that = this
+      window.addEventListener('resize', function() {
+        that.$chart.line('listening')
+      })
       let erd = elementResizeDetectorMaker();
       erd.listenTo(document.getElementById("listening"), element => {
         this.$nextTick(() => {

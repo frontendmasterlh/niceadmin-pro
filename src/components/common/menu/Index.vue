@@ -7,29 +7,24 @@
       <div class="nice-menu-tree">
         <el-menu class="el-menu-wrapper" router background-color="#30333c" text-color="rgba(255, 255, 255)"
           :collapse="collapse" active-text-color="#3beee0" :collapse-transition="collapseTransition">
-          <template v-for="(item, index) of menu">
-            <el-submenu :index="index" :key="item.name">
-              <template slot="title">
-                <i class="iconfont iconfont-menu" :class="item.icon"></i>
-                <span>{{item.name}}</span>
-              </template>
-              <!-- 二级菜单 -->
-              <el-menu-item-group v-if="menuStatu(item.children)">
-                <el-menu-item v-for="subItem of item.children" :key="subItem.name" :index="subItem.path">
-                  {{subItem.name}}
-                </el-menu-item>
-              </el-menu-item-group>
-              <!-- 三级 -->
-              <template v-if="!menuStatu(item.children)">
-                <el-submenu v-for="(subItem, index) of item.children" :key="subItem.name" :index="index">
-                  <template slot="title">{{subItem.name}}</template>
-                  <el-menu-item v-for="threeItem of subItem.children" :key="threeItem.name" :index="threeItem.path">
-                    {{threeItem.name}}</el-menu-item>
-                </el-submenu>
-              </template>
-            </el-submenu>
-          </template>
-
+          <el-submenu v-for="item of menu" :index="item.index" :key="item.index">
+            <template slot="title">
+              <i class="iconfont iconfont-menu" :class="item.icon"></i>
+              <span>{{item.name}}</span>
+            </template>
+            <!-- 二级菜单 -->
+            <el-menu-item-group>
+              <el-menu-item v-for="subItem of secondMenu(item.children)" :key="subItem.index" :index="subItem.path">
+                {{subItem.name}}
+              </el-menu-item>
+              <!-- 三级菜单 -->
+              <el-submenu v-for="threeItem of threeMenu(item.children)" :key="threeItem.index" :index="threeItem.index">
+                <template slot="title">{{threeItem.name}}</template>
+                <el-menu-item v-for="fourItem of threeItem.children" :key="fourItem.index" :index="fourItem.path">
+                  {{fourItem.name}}</el-menu-item>
+              </el-submenu>
+            </el-menu-item-group>
+          </el-submenu>
         </el-menu>
       </div>
     </div>
@@ -48,11 +43,20 @@
     },
     components: {},
     computed: {
-      menuStatu() {
-        return function (child) {
-          for (let key in child) {
-            return !child[key].children
-          }
+      secondMenu() {
+        return function(child) {
+          let second = child.filter(item => {
+            return !item.children
+          })
+          return second
+        }
+      },
+      threeMenu() {
+        return function(child) {
+          let three = child.filter(item => {
+            return item.children
+          })
+          return three
         }
       }
     },

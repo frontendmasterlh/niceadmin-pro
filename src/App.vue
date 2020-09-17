@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <nice-header :collapse="collapse" @changeCollapse="changeCollapse"></nice-header>
+    <nice-header
+      :collapse="collapse"
+      @changeCollapse="changeCollapse"
+    ></nice-header>
     <nice-menu></nice-menu>
     <nice-tab></nice-tab>
     <router-view />
@@ -29,7 +32,6 @@ export default {
   },
   watch: {
     screenWidth (val) {
-      console.log(val)
       if(val < 768) {
         this.collapse = true
         this.$bus.emit('collapse', this.collapse)
@@ -52,11 +54,10 @@ export default {
   },
   mounted () {
     // 监听窗口大小
-    window.onresize = () => {
-      return (() => {
-        this.screenWidth = document.body.clientWidth
-      })()
-    }
+    const that = this
+    window.addEventListener('resize', function() {
+      that.screenWidth = document.body.clientWidth
+    })
   }
 }
 </script>

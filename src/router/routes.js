@@ -71,13 +71,13 @@ export const appRouter = [
     component: Layout,
     children: [
       {
-        path: 'layout',
+        path: 'grid',
         meta: {
-          title: 'Layout布局',
+          title: '栅格布局',
           requiresAuth: true,
-          name: 'components_layout'
+          name: 'components_grid'
         },
-        component: resolve => { require(['../views/components/layout/Index'], resolve) }
+        component: resolve => { require(['../views/components/grid/Index'], resolve) }
       },
       {
         path: 'button',
@@ -96,9 +96,38 @@ export const appRouter = [
           name: 'components_nav'
         },
         component: resolve => { require(['../views/components/nav/Index'], resolve) }
+      },
+      {
+        path: '/components/form',
+        meta: {
+          title: '表单',
+          requiresAuth: true
+        },
+        component: resolve => { require(['../views/components/form/Index'], resolve) },
+        name: 'form',
+        children: [
+          {
+            path: 'element',
+            meta: {
+              title: '基础表单',
+              requiresAuth: true,
+              name: 'components_form_element'
+            },
+            component: resolve => { require(['../views/components/form/element/Index'], resolve) }
+          },
+          {
+            path: 'group',
+            meta: {
+              title: '基础表单',
+              requiresAuth: true,
+              name: 'components_form_group'
+            },
+            component: resolve => { require(['../views/components/form/group/Index'], resolve) }
+          }
+        ]
       }
     ]
-  },
+  }
 ]
 
 export const routes = [pageError, ...loginRouter, ...appRouter]
