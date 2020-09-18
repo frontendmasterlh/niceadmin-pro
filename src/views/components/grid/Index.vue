@@ -266,10 +266,9 @@
 
 <script>
   export default {
+    name: 'grid',
     data() {
-      return {
-
-      };
+      return {};
     },
     components: {},
     computed: {},

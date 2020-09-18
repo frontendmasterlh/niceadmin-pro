@@ -23,6 +23,7 @@
   import DashboardEdition from '@/components/home/edition/Index'
   import DashboardNotice from '@/components/home/notice/Index'
   export default {
+    name: 'dashboard',
     data() {
       return {
       };

@@ -139,6 +139,7 @@
 
 <script>
   export default {
+    name: 'formElement',
     data() {
       return {
         input: '',

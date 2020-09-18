@@ -133,6 +133,7 @@
 
 <script>
   export default {
+    name: 'formGroup',
     data() {
       return {
         ruleForm: {

@@ -150,7 +150,8 @@
           }
           this.tagsList.push({
             title: route.meta.title,
-            path: route.fullPath
+            path: route.fullPath,
+            name: route.matched[1].components.default.name
           })
         }
         this.$bus.emit('tags', this.tagsList);

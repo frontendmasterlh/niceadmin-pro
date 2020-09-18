@@ -109,6 +109,27 @@
   </div>
 </template>
 
+<script>
+  export default {
+    name: 'button',
+    data() {
+      return {};
+    },
+    components: {},
+    computed: {},
+    watch: {},
+    methods: {
+
+    },
+    created() {
+
+    },
+    mounted() {
+
+    },
+  }
+</script>
+
 <style lang="scss" scoped>
   .el-row {
     margin-bottom: 20px;

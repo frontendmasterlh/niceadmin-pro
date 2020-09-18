@@ -10,6 +10,7 @@
 
 <script>
 export default {
+  name: 'error',
   data() {
     return {
       collapse: false

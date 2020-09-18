@@ -188,6 +188,7 @@
 
 <script>
 export default {
+  name: 'componentNav',
   data() {
     return {
       activeIndex: "1",
