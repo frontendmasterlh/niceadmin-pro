@@ -3,15 +3,6 @@
   height: 100%;
 }
 
-/* .container {
-  max-width: 1380px;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-} */
-
 .iconfont {
   color: #666;
 }
@@ -107,6 +98,7 @@
   background: #FF4C52;
 }
 
+
 /* 文字控制显示 */
 
 .ellipsis {
@@ -122,6 +114,10 @@
   overflow: hidden;
   font-weight: 700;
   line-height: 18px;
+}
+
+.small-title {
+  margin-bottom: 10px;
 }
 
 /* shadow */
@@ -232,7 +228,7 @@
 /*  animate */
 
 .nice-anim {
-  animation-duration: .3s;
+  animation-duration: .6s;
   animation-fill-mode: both;
 }
 

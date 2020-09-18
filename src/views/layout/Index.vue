@@ -1,9 +1,9 @@
 <template>
   <div class="nice-layout" :class="menuStatu">
     <div class="nice-layout-body">
-      <div class="nice-layout-fuild nice-anim nice-anim-up">
-        <keep-alive :include="tagList">
-          <router-view></router-view>
+      <div class="nice-layout-fuild">
+        <keep-alive :include="tagsList">
+          <router-view class="nice-anim nice-anim-upbit"></router-view>
         </keep-alive>
       </div>
       <nice-footer></nice-footer>
@@ -16,7 +16,7 @@
   export default {
     data() {
       return {
-        tagList: [],
+        tagsList: [],
         collapse: false
       }
     },
@@ -78,6 +78,7 @@
       overflow-y: auto;
 
       .nice-layout-fuild {
+        min-height: calc(100vh - 195px);
         padding: 10px;
       }
     }

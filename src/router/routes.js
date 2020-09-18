@@ -118,7 +118,7 @@ export const appRouter = [
           {
             path: 'group',
             meta: {
-              title: '基础表单',
+              title: '组合表单',
               requiresAuth: true,
               name: 'components_form_group'
             },
