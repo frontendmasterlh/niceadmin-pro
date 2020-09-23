@@ -5,7 +5,7 @@ let menu = [
 		index: "1",
 		children: [
 			{
-				name: '仪表盘',
+				name: '控制台',
 				index: "1-1",
 				path: "/dashboard"
 			}
