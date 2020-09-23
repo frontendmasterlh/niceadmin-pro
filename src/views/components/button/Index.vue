@@ -111,7 +111,7 @@
 
 <script>
   export default {
-    name: 'button',
+    name: 'buttonComponent',
     data() {
       return {};
     },
