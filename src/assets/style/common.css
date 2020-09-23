@@ -225,6 +225,24 @@
   padding: 0 !important;
 }
 
+.none {
+  display: none;
+}
+
+.el-scrollbar {
+  display: block !important;
+}
+
+.select-input {
+  margin-top: -7px;
+}
+
+.select-input input {
+  border: 0;
+  border-bottom: 1px solid #DCDFE6;
+  border-radius: 0;
+}
+
 /*  animate */
 
 .nice-anim {
