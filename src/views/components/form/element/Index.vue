@@ -102,6 +102,12 @@
             </el-row>
             <el-row :gutter="20">
               <el-col :span="24">
+                <h3 class="small-title">Select 选择器 二次封装</h3>
+                <input-select :list="options" @changeValue="changeValue" optionLabel="label" optionValue="value"></input-select>
+              </el-col>
+            </el-row>
+            <el-row :gutter="20">
+              <el-col :span="24">
                 <h3 class="small-title">Switch 开关</h3>
                 <el-switch
                   v-model="value1"
@@ -163,6 +169,15 @@
           label: '龙须面'
         }, {
           value: '选项5',
+          label: '打卤面'
+        }, {
+          value: '选项6',
+          label: '油焖大虾'
+        }, {
+          value: '选项7',
+          label: '大闸蟹'
+        }, {
+          value: '选项8',
           label: '北京烤鸭'
         }],
         value: '',
@@ -176,7 +191,9 @@
     computed: {},
     watch: {},
     methods: {
-
+      changeValue(e) {
+        this.value = e
+      }
     },
     created() {
 
