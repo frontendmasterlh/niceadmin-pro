@@ -41,25 +41,17 @@
       </div>
     </div>
     <!-- tab -->
-    <div class="nice-tabs-scroll">
-      <ul class="list">
-        <router-link to="/dashboard" tag="li" class="flex-center home" :class="{'active': isActive('/dashboard')}">
-          <i class="iconfont nice-icon-homepage_fill"></i>
+    <ul class="list">
+      <router-link to="/dashboard" tag="li" class="flex-center home" :class="{'active': isActive('/dashboard')}">
+        <i class="iconfont nice-icon-homepage_fill"></i>
+      </router-link>
+      <li class="flex-center" v-for="(item,index) in tagsList" :class="{'active': isActive(item.path)}" :key="index">
+        <router-link :to="item.path" class="tags-li-title">
+          {{item.title}}
         </router-link>
-        <!-- <li class="flex-center" v-for="(item, index) of 20" :key=index>
-          <router-link to="/dashboard" class="tags-li-title">
-            测试
-          </router-link>
-          <span class="close-btn flex-center transition" @click="closeTags(index)"><i class="el-icon-close"></i></span>
-        </li> -->
-        <li class="flex-center" v-for="(item,index) in tagsList" :class="{'active': isActive(item.path)}" :key="index">
-          <router-link :to="item.path" class="tags-li-title">
-            {{item.title}}
-          </router-link>
-          <span class="close-btn flex-center transition" @click="closeTags(index)"><i class="el-icon-close"></i></span>
-        </li>
-      </ul>
-    </div>
+        <span class="close-btn flex-center transition" @click="closeTags(index)"><i class="el-icon-close"></i></span>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -254,18 +246,13 @@
         font-size: 17px;
       }
     }
-    .nice-tabs-scroll {
+
+    .list {
       position: absolute;
       top: 0;
       left: 55px;
-      right: 102px;
       display: flex;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-    .list {
-      display: flex;
-      transform: translateX(0px);
+
       li {
         min-width: 0;
         line-height: 34px;
