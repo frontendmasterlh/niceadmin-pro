@@ -42,7 +42,7 @@
     </div>
     <!-- tab -->
     <swiper ref="mySwiper" :options="swiperOption" class="list">
-      <swiper-slide class="flex-center home">
+      <swiper-slide class="flex-center home" :class="{'active': isActive('/dashboard')}">
         <router-link to="/dashboard" tag="li" class="flex-center home" :class="{'active': isActive('/dashboard')}">
           <i class="iconfont nice-icon-homepage_fill"></i>
         </router-link>
@@ -302,6 +302,11 @@
         &.home {
           padding-right: 15px;
           width: 40px;
+          &.active {
+            i {
+              color: #17B3A3;
+            }
+          }
         }
 
         .nice-icon-homepage_fill {
