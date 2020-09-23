@@ -1,11 +1,11 @@
 <template>
   <div class="nice-tabs transition" :class="menuStatu">
     <!-- 左侧按钮 -->
-    <div class="nice-tabs-control shadow left flex-center">
+    <div class="nice-tabs-control shadow left flex-center" @click="prev">
       <i class="el-icon-d-arrow-left"></i>
     </div>
     <!-- 左侧按钮 -->
-    <div class="nice-tabs-control shadow right flex-center">
+    <div class="nice-tabs-control shadow right flex-center" @click="next">
       <i class="el-icon-d-arrow-right"></i>
     </div>
     <!-- 下拉工具 -->
@@ -41,17 +41,19 @@
       </div>
     </div>
     <!-- tab -->
-    <ul class="list">
-      <router-link to="/dashboard" tag="li" class="flex-center home" :class="{'active': isActive('/dashboard')}">
-        <i class="iconfont nice-icon-homepage_fill"></i>
-      </router-link>
-      <li class="flex-center" v-for="(item,index) in tagsList" :class="{'active': isActive(item.path)}" :key="index">
+    <swiper ref="mySwiper" :options="swiperOption" class="list">
+      <swiper-slide class="flex-center home">
+        <router-link to="/dashboard" tag="li" class="flex-center home" :class="{'active': isActive('/dashboard')}">
+          <i class="iconfont nice-icon-homepage_fill"></i>
+        </router-link>
+      </swiper-slide>
+      <swiper-slide class="flex-center" v-for="(item,index) in tagsList" :class="{'active': isActive(item.path)}" :key="index">
         <router-link :to="item.path" class="tags-li-title">
           {{item.title}}
         </router-link>
         <span class="close-btn flex-center transition" @click="closeTags(index)"><i class="el-icon-close"></i></span>
-      </li>
-    </ul>
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
 
@@ -61,11 +63,24 @@
       return {
         collapse: false,
         isOpen: false,
-        tagsList: []
+        tagsList: [],
+        swiperOption: {
+          slidesPerView: 'auto',
+          paginationClickable: true,
+          observer:true,
+          observeParents:true,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        }
       };
     },
     components: {},
     computed: {
+      swiper() {
+        return this.$refs.mySwiper.$swiper
+      },
       menuStatu() {
         return this.collapse ? 'nice-shrink' : '';
       },
@@ -88,6 +103,14 @@
       },
       isActive(path) {
         return path === this.$route.fullPath;
+      },
+      // 点击左侧
+      prev() {
+        this.$refs.mySwiper.$swiper.slideTo(0)
+      },
+      // 点击右侧
+      next() {
+        this.$refs.mySwiper.$swiper.slideTo(this.tagsList.length)
       },
       // 关闭单个标签
       closeTags(index) {
@@ -252,10 +275,13 @@
       top: 0;
       left: 55px;
       display: flex;
+      right: 102px;
 
-      li {
+      .swiper-slide {
         min-width: 0;
-        line-height: 34px;
+        line-height: 33px;
+        width: auto;
+        height: auto;
         max-width: 160px;
         text-overflow: ellipsis;
         padding: 0 15px;
@@ -265,7 +291,10 @@
         cursor: pointer;
         background: #ffffff;
         margin-right: 10px;
-        box-shadow: 0 1px 5px 0 rgba(0,0,0,.05);
+        box-shadow: 0 1px 5px 0 rgba(107, 107, 107, 0.05);
+        &:last-child {
+          margin-right: 0;
+        }
         a {
           color: #999999;
         }
@@ -290,7 +319,6 @@
           line-height: 16px;
           border-radius: 50%;
           font-size: 12px;
-
           &:hover {
             background: #17B3A3;
             color: #fff;
