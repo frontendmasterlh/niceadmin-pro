@@ -6,7 +6,7 @@
       </div>
       <div class="nice-menu-tree">
         <el-menu class="el-menu-wrapper" router background-color="#30333c" text-color="rgba(255, 255, 255)"
-          :collapse="collapse" active-text-color="#3beee0" :collapse-transition="collapseTransition" :default-active="activeIndex">
+          :collapse="collapse" active-text-color="#3beee0" :collapse-transition="collapseTransition" :default-active="$route.path">
           <el-submenu v-for="item of menu" :index="item.index" :key="item.index">
             <template slot="title">
               <i class="iconfont iconfont-menu" :class="item.icon"></i>

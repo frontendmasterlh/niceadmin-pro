@@ -38,7 +38,7 @@
 <style lang='scss' scoped>
   .nice-footer {
     width: 100%;
-    margin: 48px 0 24px 0;
+    margin: 28px 0 24px 0;
     padding: 0 16px;
     text-align: center;
     .links {

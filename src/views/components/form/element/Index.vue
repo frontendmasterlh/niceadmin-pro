@@ -192,6 +192,7 @@
     watch: {},
     methods: {
       changeValue(e) {
+        console.log(e)
         this.value = e
       }
     },

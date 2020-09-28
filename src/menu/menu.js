@@ -49,6 +49,18 @@ let menu = [
 				]
 			}
 		]
+	},
+	{
+		name: '页面',
+		icon: 'nice-icon-read',
+		index: "3",
+		children: [
+			{
+				name: '404页面',
+				index: "3-1",
+				path: '/pages/404'
+			},
+		]
 	}
 ]
 

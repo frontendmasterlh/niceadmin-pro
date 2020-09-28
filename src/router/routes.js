@@ -127,6 +127,26 @@ export const appRouter = [
         ]
       }
     ]
+  },
+  {
+    path: '/pages',
+    meta: {
+      title: '页面',
+      requiresAuth: true
+    },
+    name: 'pages',
+    component: Layout,
+    children: [
+      {
+        path: '404',
+        meta: {
+          title: '404页面不存在',
+          requiresAuth: true,
+          name: 'pages_404'
+        },
+        component: resolve => { require(['../views/error/404.vue'], resolve) }
+      }
+    ]
   }
 ]
 
