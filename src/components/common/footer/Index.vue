@@ -9,7 +9,7 @@
       <span class="mr5">Copyright © 2012-2020</span>
       <a href="https://www.lxhcool.cn">niceadmin 演示站</a>
       <span>. Designed by</span>
-      <a href="https://www.lxhcool.cn" target="_blank">至一科技</a>. 
+      <a href="https://www.lxhcool.cn" target="_blank"> lxhcool</a>. 
     </p>
   </div>
 </template>

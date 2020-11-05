@@ -223,7 +223,7 @@
     position: fixed;
     top: 70px;
     left: 255px;
-    z-index: 1000;
+    z-index: 50;
     padding: 10px 0px 2px;
     box-sizing: content-box;
     background: #f7f7f7;

@@ -1,40 +1,62 @@
 <template>
   <div class="nice-layout" :class="menuStatu">
+    <nice-header :collapse="collapse" @changeCollapse="changeCollapse"></nice-header>
     <div class="nice-layout-body">
       <div class="nice-layout-fuild">
         <keep-alive :include="tagsList">
           <router-view class="nice-anim nice-anim-upbit"></router-view>
         </keep-alive>
       </div>
+      <nice-menu></nice-menu>
+      <nice-tab></nice-tab>
       <nice-footer></nice-footer>
     </div>
   </div>
 </template>
 
 <script>
+  import NiceHeader from '@/components/common/header/Index'
   import niceFooter from '@/components/common/footer/Index'
+  import NiceMenu from '@/components/common/menu/Index'
+  import NiceTab from '@/components/common/tab/Index'
   export default {
     data() {
       return {
         tagsList: [],
-        collapse: false
+        collapse: false,
+        screenWidth: document.body.clientWidth
       }
     },
     components: {
-      niceFooter
+      NiceHeader,
+      niceFooter,
+      NiceMenu,
+      NiceTab
     },
     computed: {
       menuStatu() {
         return this.collapse ? "nice-shrink" : "";
+      },
+      isCollapse: {
+        get () {
+          return this.screenWidth < 768
+        },
+        set () {
+        }
+      }
+    },
+    watch: {
+      screenWidth (val) {
+        if(val < 768) {
+          this.collapse = true
+          this.$bus.emit('collapse', this.collapse)
+        } else {
+          this.collapse = false
+          this.$bus.emit('collapse', this.collapse)
+        }
       }
     },
     methods: {
-      // 接收bus传递控制菜单折叠
-      changeCollapse() {
-        this.$bus.on('collapse-content', msg => {
-          this.collapse = msg
-        })
-      },
       // 只有在标签页列表里的页面才使用keep-alive，即关闭标签之后就不保存到内存中了。
       getTagList() {
         this.$bus.on('tags', msg => {
@@ -45,11 +67,21 @@
           }
           this.tagsList = tagsList;
         });
+      },
+      changeCollapse(collapse) {
+        this.collapse = !this.collapse
+        this.$bus.emit('collapse', this.collapse)
       }
     },
     created() {
-      this.changeCollapse()
       this.getTagList()
+    },
+    mounted () {
+      // 监听窗口大小
+      const that = this
+      window.addEventListener('resize', function() {
+        that.screenWidth = document.body.clientWidth
+      })
     }
   }
 </script>
