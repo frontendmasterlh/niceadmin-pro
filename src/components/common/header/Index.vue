@@ -120,6 +120,9 @@
       position: relative;
     }
   }
+  .nice-nav-tool {
+    flex: 1;
+  }
   .nice-nav-user {
     padding-right: 20px;
     .avatar-box {
